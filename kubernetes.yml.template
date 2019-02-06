@@ -25,9 +25,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         volumeMounts:
-          - name: podinfo
-            mountPath: /tmp
-            readOnly: false
+            - name: podinfo
+              mountPath: /tmp
+              readOnly: false
       volumes:
         - name: podinfo
           downwardAPI:
@@ -35,7 +35,7 @@ spec:
             - path: "labels"
               fieldRef:
                 fieldPath: metadata.labels
-      imagePullSecrets:
+imagePullSecrets:
       - name: wercker
 ---
 apiVersion: v1
